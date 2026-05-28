@@ -70,7 +70,7 @@ body {
 .glass-btn:hover, .glass-btn:focus {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #16a085; /* Turquesa no hover */
+    color: #62c4eb; /* Turquesa no hover */
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
