@@ -9,15 +9,16 @@ body {
 }
 
 /* Fundo com imagem e overlay escuro */
+/* Fundo com imagem e overlay escuro para diminuir a saturação/opacidade */
 .bg-image {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* Adicione uma imagem de fundo épica ou texturizada aqui */
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(13, 38, 41, 0.8) 100%), 
-                url('sua-imagem-de-fundo.jpg') center/cover no-repeat;
+    /* O linear-gradient aplica uma "capa" escura de 85% sobre a imagem de fundo */
+    background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), 
+                url('castelo-infinito.jpg') center/cover no-repeat;
     z-index: 0;
 }
 
