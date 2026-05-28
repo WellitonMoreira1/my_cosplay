@@ -22,6 +22,25 @@ body {
     z-index: 0;
 }
 
+/* Camada de fumaça atmosférica por cima da imagem de fundo */
+.bg-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, rgba(22, 160, 133, 0.05) 0%, transparent 60%);
+    animation: pulseAtmosphere 8s infinite alternate;
+    pointer-events: none; /* Para não atrapalhar o clique nos botões */
+    z-index: 1;
+}
+
+@keyframes pulseAtmosphere {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 1; }
+}
+
 /* O Efeito Glassmorphism Central */
 .glass-panel {
     background: rgba(255, 255, 255, 0.05);
@@ -32,14 +51,18 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* Estilo da Foto de Perfil */
+/* Nova borda temática com as cores dos olhos do Obanai */
 .profile-img {
     width: 120px;
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    padding: 3px;
+    /* Remove a borda sólida antiga e cria um gradiente */
+    padding: 4px;
+    background: linear-gradient(135deg, #e3b021 48%, #16a085 52%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    /* Mantém a imagem redonda dentro do gradiente */
+    background-clip: padding-box;
 }
 
 /* Botões com Glassmorphism */
@@ -85,4 +108,16 @@ body {
 .fade-in {
     /* A animação dura 0.8 segundos, começa rápida e termina suave */
     animation: fadeInSlide 0.8s ease-out forwards;
+}
+
+/* Animação de Levitação contínua */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Aplique isso na classe .glass-panel do Header */
+header.glass-panel {
+    animation: float 6s ease-in-out infinite;
 }
