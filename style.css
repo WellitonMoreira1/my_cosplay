@@ -1,28 +1,26 @@
-/* Importando uma fonte limpa e profissional */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #0a0a0a; /* Fallback escuro */
+    background-color: #0a0a0a; 
     color: #ffffff;
+    overflow-x: hidden; /* Evita rolagem horizontal com as animações */
 }
 
-/* Fundo com imagem e overlay escuro */
-/* Fundo com imagem e overlay escuro para diminuir a saturação/opacidade */
+/* Fundo com o Castelo Infinito e overlay escuro de 85% */
 .bg-image {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* O linear-gradient aplica uma "capa" escura de 85% sobre a imagem de fundo */
     background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), 
                 url('castelo-infinito.jpg') center/cover no-repeat;
     z-index: 0;
 }
 
-/* Camada de fumaça atmosférica por cima da imagem de fundo */
+/* Efeito de Fumaça/Atmosfera flutuando ao fundo */
 .bg-image::before {
     content: '';
     position: absolute;
@@ -30,18 +28,13 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at 50% 50%, rgba(22, 160, 133, 0.05) 0%, transparent 60%);
-    animation: pulseAtmosphere 8s infinite alternate;
-    pointer-events: none; /* Para não atrapalhar o clique nos botões */
+    background: radial-gradient(circle at 50% 50%, rgba(22, 160, 133, 0.08) 0%, transparent 60%);
+    animation: pulseAtmosphere 8s infinite alternate ease-in-out;
+    pointer-events: none; 
     z-index: 1;
 }
 
-@keyframes pulseAtmosphere {
-    0% { transform: scale(1); opacity: 0.5; }
-    100% { transform: scale(1.2); opacity: 1; }
-}
-
-/* O Efeito Glassmorphism Central */
+/* Painel de Glassmorphism Padrão */
 .glass-panel {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
@@ -51,21 +44,20 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* Nova borda temática com as cores dos olhos do Obanai */
+/* Foto de Perfil com Borda Heterocromática (Obanai) */
 .profile-img {
     width: 120px;
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    /* Remove a borda sólida antiga e cria um gradiente */
     padding: 4px;
+    /* Dourado/Amarelo de um lado, Turquesa do outro */
     background: linear-gradient(135deg, #e3b021 48%, #16a085 52%);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    /* Mantém a imagem redonda dentro do gradiente */
     background-clip: padding-box;
 }
 
-/* Botões com Glassmorphism */
+/* Botões Modernos e Translúcidos */
 .glass-btn {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
@@ -78,46 +70,47 @@ body {
 .glass-btn:hover, .glass-btn:focus {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #00d2ff; /* Tom turquesa do Obanai no hover */
+    color: #16a085; /* Turquesa no hover */
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Sombra suave para a galeria */
-.custom-shadow {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
-}
+/* ANIMAÇÕES */
 
-.custom-shadow:hover {
-    transform: scale(1.02);
-}
-
-/* Animação de Entrada (Fade-In com leve deslize) */
-@keyframes fadeInSlide {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* 1. Entrada suave da página inteira */
 .fade-in {
-    /* A animação dura 0.8 segundos, começa rápida e termina suave */
     animation: fadeInSlide 0.8s ease-out forwards;
 }
 
-/* Animação de Levitação contínua */
+@keyframes fadeInSlide {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. Levitação do Cartão de Perfil */
+.floating-card {
+    animation: float 6s ease-in-out infinite;
+}
+
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
 
-/* Aplique isso na classe .glass-panel do Header */
-header.glass-panel {
-    animation: float 6s ease-in-out infinite;
+/* 3. Brilho sutil no Badge do Personagem */
+.obanai-badge {
+    animation: sutilGlow 3s infinite ease-in-out;
+}
+
+@keyframes sutilGlow {
+    0% { box-shadow: 0 0 5px rgba(22, 160, 133, 0.2); }
+    50% { box-shadow: 0 0 15px rgba(22, 160, 133, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(22, 160, 133, 0.2); }
+}
+
+/* 4. Pulso da Atmosfera ao fundo */
+@keyframes pulseAtmosphere {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.1); opacity: 1; }
 }
