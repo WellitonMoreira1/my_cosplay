@@ -1,0 +1,70 @@
+/* Importando uma fonte limpa e profissional */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a; /* Fallback escuro */
+    color: #ffffff;
+}
+
+/* Fundo com imagem e overlay escuro */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Adicione uma imagem de fundo épica ou texturizada aqui */
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(13, 38, 41, 0.8) 100%), 
+                url('sua-imagem-de-fundo.jpg') center/cover no-repeat;
+    z-index: 0;
+}
+
+/* O Efeito Glassmorphism Central */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Estilo da Foto de Perfil */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    padding: 3px;
+}
+
+/* Botões com Glassmorphism */
+.glass-btn {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.glass-btn:hover, .glass-btn:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #00d2ff; /* Tom turquesa do Obanai no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Sombra suave para a galeria */
+.custom-shadow {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.custom-shadow:hover {
+    transform: scale(1.02);
+}
