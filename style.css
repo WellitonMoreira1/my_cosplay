@@ -51,9 +51,7 @@ body {
     object-fit: cover;
     border-radius: 50%;
     padding: 4px;
-    /* Dourado/Amarelo de um lado, Turquesa do outro */
-    background: linear-gradient(135deg, #e3b021 48%, #16a085 52%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(150, 61, 233, 0.5);
     background-clip: padding-box;
 }
 
@@ -113,4 +111,68 @@ body {
 @keyframes pulseAtmosphere {
     0% { transform: scale(1); opacity: 0.5; }
     100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Estilização da Modal (Glassmorphism) */
+.glass-modal {
+    background: rgba(15, 15, 15, 0.4);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Deixa o fundo atrás da modal um pouco mais escuro para destacar o texto */
+.modal-backdrop.show {
+    opacity: 0.7;
+}
+
+#sobre{
+    text-align: justify !important;
+}
+
+/* ==========================================
+   TELA DE LOADING (PRELOADER)
+   ========================================== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #050505; /* Fundo super escuro para dar contraste */
+    z-index: 9999; /* Fica acima de tudo na página */
+    transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
+}
+
+/* Imagem pulsando como batimento cardíaco/respiração */
+.loader-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Usa as cores dos olhos dele no brilho */
+    border: 2px solid rgba(22, 160, 133, 0.5); 
+    animation: pulseBreathing 1.2s infinite alternate ease-in-out;
+}
+
+/* Texto com espaçamento elegante */
+.loader-text {
+    color: #16a085;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    animation: pulseBreathing 1.2s infinite alternate ease-in-out;
+    animation-delay: 0.2s; /* Um leve atraso em relação à imagem para ficar orgânico */
+}
+
+@keyframes pulseBreathing {
+    0% { transform: scale(0.95); opacity: 0.5; box-shadow: 0 0 0px rgba(22, 160, 133, 0); }
+    100% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 25px rgba(22, 160, 133, 0.6); }
+}
+
+/* Classe que o JavaScript usará para fazer o loading desaparecer suavemente */
+.fade-out-loader {
+    opacity: 0;
+    visibility: hidden;
 }
