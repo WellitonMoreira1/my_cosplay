@@ -66,11 +66,18 @@ body {
 }
 
 .glass-btn:hover, .glass-btn:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #62c4eb; /* Turquesa no hover */
+    /* Fundo preenchido com o turquesa do Obanai (com 90% de opacidade para não perder a textura do fundo) */
+    background: rgba(22, 160, 133, 0.9);
+    border: 1px solid rgba(22, 160, 133, 1);
+    
+    /* Garante que o texto e os ícones fiquem brancos */
+    color: #ffffff !important; 
+    
+    /* Mantém o efeito de levitação */
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    
+    /* Muda a sombra para combinar com o botão turquesa */
+    box-shadow: 0 5px 15px rgba(22, 160, 133, 0.4);
 }
 
 /* ANIMAÇÕES */
