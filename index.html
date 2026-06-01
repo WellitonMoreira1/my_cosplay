@@ -22,6 +22,15 @@
 </head>
 <body>
 
+    <!-- Tela de Loading (Preloader) Temática -->
+    <div id="preloader" class="d-flex flex-column justify-content-center align-items-center">
+        <!-- Você pode usar a obanai.png ou outra imagem focada nos olhos dele -->
+        <img src="loading.png" alt="Carregando..." class="loader-img mb-4">
+        <p class="loader-text text-uppercase fw-bold tracking-widest">
+            <i class="fas fa-spinner fa-spin me-2" style="font-size: 0.8rem;"></i> Respiração da Serpente...
+        </p>
+    </div>
+
     <!-- Fundo Temático e Atmosfera -->
     <div class="bg-image"></div>
 
@@ -48,6 +57,10 @@
             <button id="shareBtn" class="btn glass-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold">
                 <i class="fas fa-share-nodes fs-4"></i> Compartilhar Perfil
             </button>
+            <!-- Botão Sobre Mim (Abre a Modal) -->
+            <button type="button" class="btn glass-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                <i class="fas fa-id-card fs-4"></i> Sobre Mim
+            </button>
         </section>
 
         <!-- Rodapé Minimalista -->
@@ -56,6 +69,32 @@
         </footer>
 
     </main>
+<!-- Modal Sobre Mim (FORA DO MAIN) -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-modal text-white border-0">
+                <div class="modal-header border-bottom-0 pb-0 pt-4 px-4">
+                    <h5 class="modal-title fw-bold text-uppercase" id="aboutModalLabel" style="letter-spacing: 1px; color: #16a085;">
+                        <i class="fas fa-user-ninja me-2"></i> Um pouco da minha história
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-white lh-lg px-4 pb-4" id="sobre">
+                <p>
+                    E aí! Sou o Welliton Moreira. Pra mim, o cosplay não é só vestir uma roupa legal no dia do evento, é a construção completa do personagem. Gosto de levar a preparação física a sério — treinando pesado em casa na base dos halteres e elásticos — para alcançar o porte exato dos personagens que escolho, geralmente puxando para uma estética Seinen e traços mais maduros. Em abril eu estava nas sombras como Kakashi ANBU, e agora o foco é entregar a melhor versão do Obanai Iguro.
+                </p>
+                <p>
+                    Fora dos eventos, minha rotina é dividida entre tecnologia e narrativas. Sou desenvolvedor web Full-Stack. Gosto de abrir o editor de código, trabalhar com PHP, MySQL e Bootstrap, e criar do zero projetos reais (desde sistemas de gestão até o <em>FitTrack</em>, um app de academia que estou construindo). Aliás, essa página com design minimalista e glassmorphism que você está usando agora foi codada linha por linha por mim.
+                </p>
+                <p class="mb-0">
+                    Quando não estou programando ou levantando peso, estou no BookTok ou escrevendo. Atualmente dedico grande parte do meu tempo escrevendo meu próprio livro de suspense e thriller — construindo mistérios ao redor de personagens complexos como o psicólogo Elijah Brooks, a Helena, e figuras imprevisíveis como o Thorne. 
+                <br><br>
+                    Em resumo: construo sistemas de dia, escrevo mistérios à noite, e trago personagens à vida nos eventos.
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -76,6 +115,24 @@
             } else {
                 alert('Copie o link no seu navegador para compartilhar: ' + window.location.href);
             }
+        });
+    </script>
+
+    <!-- Script do Preloader -->
+    <script>
+        // Aguarda a janela carregar completamente
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            
+            // Força a tela de loading aparecer por 1.5 segundos para o usuário ver a animação
+            setTimeout(() => {
+                preloader.classList.add('fade-out-loader');
+                
+                // Remove o elemento do HTML após 600ms (tempo da transição do CSS) para liberar os cliques na tela
+                setTimeout(() => {
+                    preloader.remove();
+                }, 600);
+            }, 1500); 
         });
     </script>
 </body>
