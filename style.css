@@ -3,183 +3,150 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #0a0a0a; 
+    background-color: #030303; /* Fundo base quase totalmente preto */
     color: #ffffff;
-    overflow-x: hidden; /* Evita rolagem horizontal com as animações */
+    overflow-x: hidden;
 }
 
-/* Fundo com o Castelo Infinito e overlay escuro de 85% */
-.bg-image {
+/* O Fundo Sombrio (CSS Puro) */
+.dark-void {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), 
-                url('castelo-infinito.jpg') center/cover no-repeat;
+    /* Cria um vazio que escurece nas bordas, dando um ar cinematográfico */
+    background: radial-gradient(circle at center, #111111 0%, #000000 80%);
     z-index: 0;
 }
 
-/* Efeito de Fumaça/Atmosfera flutuando ao fundo */
-.bg-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(circle at 50% 50%, rgba(22, 160, 133, 0.08) 0%, transparent 60%);
-    animation: pulseAtmosphere 8s infinite alternate ease-in-out;
-    pointer-events: none; 
-    z-index: 1;
+/* Painel Principal Escuro */
+.dark-glass-panel {
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
 }
 
-/* Painel de Glassmorphism Padrão */
-.glass-panel {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
-/* Foto de Perfil com Borda Heterocromática (Obanai) */
+/* Foto com a Borda Heterocromática e Sombra Pesada */
 .profile-img {
     width: 120px;
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    padding: 4px;
-    box-shadow: 0 4px 15px rgba(150, 61, 233, 0.5);
+    padding: 3px;
+    background: linear-gradient(135deg, #ffffff 48%, #ffffff 52%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
     background-clip: padding-box;
 }
 
-/* Botões Modernos e Translúcidos */
-.glass-btn {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+/* Botões Sombrios */
+.dark-btn {
+    background: rgba(15, 15, 15, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #b0b0b0; /* Texto puxando para o cinza claro inicialmente */
     border-radius: 12px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.glass-btn:hover, .glass-btn:focus {
-    /* Fundo preenchido com o turquesa do Obanai (com 90% de opacidade para não perder a textura do fundo) */
-    background: rgba(22, 160, 133, 0.9);
-    border: 1px solid rgba(22, 160, 133, 1);
-    
-    /* Garante que o texto e os ícones fiquem brancos */
-    color: #ffffff !important; 
-    
-    /* Mantém o efeito de levitação */
+/* O Efeito de Hover que você pediu */
+.dark-btn:hover, .dark-btn:focus {
+    background: rgba(2, 9, 109, 0.9); /* Turquesa escurecido */
+    border: 1px solid #022f69;
+    color: #ffffff !important; /* Texto totalmente branco */
     transform: translateY(-2px);
-    
-    /* Muda a sombra para combinar com o botão turquesa */
-    box-shadow: 0 5px 15px rgba(22, 160, 133, 0.4);
+    box-shadow: 0 8px 20px rgba(22, 160, 133, 0.3);
 }
 
-/* ANIMAÇÕES */
-
-/* 1. Entrada suave da página inteira */
-.fade-in {
-    animation: fadeInSlide 0.8s ease-out forwards;
+/* Badge do Personagem Escurecida */
+.badge-somber {
+    background-color: #0a0a0a;
+    border: 1px solid #222;
+    color: #888;
 }
 
-@keyframes fadeInSlide {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+/* Modal Sombria */
+.dark-glass-modal {
+    background: rgba(12, 12, 12, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
 }
 
-/* 2. Levitação do Cartão de Perfil */
-.floating-card {
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
-}
-
-/* 3. Brilho sutil no Badge do Personagem */
-.obanai-badge {
-    animation: sutilGlow 3s infinite ease-in-out;
-}
-
-@keyframes sutilGlow {
-    0% { box-shadow: 0 0 5px rgba(22, 160, 133, 0.2); }
-    50% { box-shadow: 0 0 15px rgba(22, 160, 133, 0.6); }
-    100% { box-shadow: 0 0 5px rgba(22, 160, 133, 0.2); }
-}
-
-/* 4. Pulso da Atmosfera ao fundo */
-@keyframes pulseAtmosphere {
-    0% { transform: scale(1); opacity: 0.5; }
-    100% { transform: scale(1.1); opacity: 1; }
-}
-
-/* Estilização da Modal (Glassmorphism) */
-.glass-modal {
-    background: rgba(15, 15, 15, 0.4);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-}
-
-/* Deixa o fundo atrás da modal um pouco mais escuro para destacar o texto */
 .modal-backdrop.show {
-    opacity: 0.7;
+    opacity: 0.85; /* Deixa o fundo mais preto ao abrir a modal */
 }
 
-#sobre{
-    text-align: justify !important;
-}
-
-/* ==========================================
-   TELA DE LOADING (PRELOADER)
-   ========================================== */
+/* PRELOADER TEMÁTICO */
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #050505; /* Fundo super escuro para dar contraste */
-    z-index: 9999; /* Fica acima de tudo na página */
+    background-color: #000000;
+    z-index: 9999;
     transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
 }
 
-/* Imagem pulsando como batimento cardíaco/respiração */
 .loader-img {
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
-    /* Usa as cores dos olhos dele no brilho */
-    border: 2px solid rgba(22, 160, 133, 0.5); 
+    border: 2px solid rgba(20, 58, 160, 0.3); 
     animation: pulseBreathing 1.2s infinite alternate ease-in-out;
 }
 
-/* Texto com espaçamento elegante */
 .loader-text {
-    color: #16a085;
+    color: #1656a0;
     font-size: 0.85rem;
     letter-spacing: 3px;
     animation: pulseBreathing 1.2s infinite alternate ease-in-out;
-    animation-delay: 0.2s; /* Um leve atraso em relação à imagem para ficar orgânico */
+    animation-delay: 0.2s;
 }
 
-@keyframes pulseBreathing {
-    0% { transform: scale(0.95); opacity: 0.5; box-shadow: 0 0 0px rgba(22, 160, 133, 0); }
-    100% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 25px rgba(22, 160, 133, 0.6); }
-}
-
-/* Classe que o JavaScript usará para fazer o loading desaparecer suavemente */
 .fade-out-loader {
     opacity: 0;
     visibility: hidden;
+}
+
+/* ANIMAÇÕES GERAIS */
+.fade-in {
+    animation: fadeInSlide 0.8s ease-out forwards;
+}
+
+@keyframes fadeInSlide {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.floating-card {
+    animation: floatDark 6s ease-in-out infinite;
+}
+
+@keyframes floatDark {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+}
+
+.obanai-badge {
+    animation: sutilGlowDark 3s infinite ease-in-out;
+}
+
+@keyframes sutilGlowDark {
+    0% { box-shadow: 0 0 5px rgba(22, 160, 133, 0.1); color: #888; }
+    50% { box-shadow: 0 0 15px rgba(22, 160, 133, 0.4); color: #3d6896; }
+    100% { box-shadow: 0 0 5px rgba(22, 160, 133, 0.1); color: #888; }
+}
+
+@keyframes pulseBreathing {
+    0% { transform: scale(0.98); opacity: 0.6; box-shadow: 0 0 0px rgba(22, 160, 133, 0); }
+    100% { transform: scale(1.02); opacity: 1; box-shadow: 0 0 20px rgba(16, 88, 221, 0.4); }
 }
