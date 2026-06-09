@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welliton Moreira | Cosplay</title>
 
-    <!-- Meta Tags Open Graph -->
     <meta property="og:title" content="Welliton Moreira | Cosplay">
     <meta property="og:description" content="Portfólio de Cosplay e Redes Sociais.">
     <meta property="og:image" content="obanai.png">
@@ -13,104 +12,96 @@
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/x-icon" href="slayer.png">
-    <!-- Bootstrap 5 CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS Customizado -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Tela de Loading (Preloader) Temática -->
     <div id="preloader" class="d-flex flex-column justify-content-center align-items-center">
-        <!-- Você pode usar a obanai.png ou outra imagem focada nos olhos dele -->
         <img src="loading.png" alt="Carregando..." class="loader-img mb-4">
         <p class="loader-text text-uppercase fw-bold tracking-widest">
             <i class="fas fa-spinner fa-spin me-2" style="font-size: 0.8rem;"></i> Respiração da Serpente...
         </p>
     </div>
 
-    <!-- Fundo Temático e Atmosfera -->
-    <div class="bg-image"></div>
+    <div class="dark-void"></div>
 
     <main class="container min-vh-100 d-flex flex-column justify-content-center align-items-center py-5 position-relative z-1 fade-in">
         
-        <!-- Cartão de Perfil (Agora com animação de levitação) -->
-        <header class="glass-panel floating-card text-center p-4 mb-4 w-100" style="max-width: 400px;">
+        <header class="dark-glass-panel floating-card text-center p-4 mb-4 w-100" style="max-width: 400px;">
             <img src="obanai.png" alt="Welliton Moreira - Cosplay" class="profile-img mb-3">
             
             <h1 class="h3 fw-bold text-white mb-1">Welliton Moreira</h1>
             <p class="text-light opacity-75 mb-0">Cosplayer</p>
-            <span class="badge bg-dark border border-secondary mt-2 obanai-badge">蛇柱 | Obanai Iguro</span>
+            <span class="badge badge-somber mt-2 obanai-badge">蛇柱 | Obanai Iguro</span>
         </header>
 
-        <!-- Botões de Links -->
         <section class="links-container w-100 d-flex flex-column gap-3 mb-4" style="max-width: 400px;">
-            <a href="https://www.instagram.com/wellitonmoreira2?igsh=dDc1ZTZzZzhpZDV2" class="btn glass-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/wellitonmoreira2?igsh=dDc1ZTZzZzhpZDV2" class="btn dark-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-instagram fs-4"></i> Instagram
             </a>
-            <a href="https://www.tiktok.com/@wellitonmoreira1?_r=1&_t=ZS-96k9CzDs5jR" class="btn glass-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.tiktok.com/@wellitonmoreira1?_r=1&_t=ZS-96k9CzDs5jR" class="btn dark-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-tiktok fs-4"></i> TikTok
             </a>
-            <!-- Botão de Compartilhamento Nativo -->
-            <button id="shareBtn" class="btn glass-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold">
+            
+            <button id="shareBtn" class="btn dark-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold">
                 <i class="fas fa-share-nodes fs-4"></i> Compartilhar Perfil
             </button>
-            <!-- Botão Sobre Mim (Abre a Modal) -->
-            <button type="button" class="btn glass-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold" data-bs-toggle="modal" data-bs-target="#aboutModal">
+            
+            <button type="button" class="btn dark-btn d-flex align-items-center justify-content-center gap-2 py-3 fw-semibold" data-bs-toggle="modal" data-bs-target="#aboutModal">
                 <i class="fas fa-id-card fs-4"></i> Sobre Mim
             </button>
         </section>
 
-        <!-- Rodapé Minimalista -->
         <footer class="text-center mt-auto">
-            <small class="text-light opacity-50">© 2026 Welliton Moreira</small>
+            <small class="text-light opacity-25">© 2026 Welliton Moreira</small>
         </footer>
 
     </main>
-<!-- Modal Sobre Mim (FORA DO MAIN) -->
+
     <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content glass-modal text-white border-0">
-                <div class="modal-header border-bottom-0 pb-0 pt-4 px-4">
+            <div class="modal-content dark-glass-modal text-white border-0">
+                <div class="modal-header border-bottom-0 pb-0 pt-4 px-4 d-flex justify-content-between align-items-center">
                     <h5 class="modal-title fw-bold text-uppercase" id="aboutModalLabel" style="letter-spacing: 1px; color: #16a085;">
-                        <i class="fas fa-user-ninja me-2"></i> Um pouco da minha história
+                        <i class="fas fa-user-ninja me-2"></i> Minha História
                     </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    <button type="button" class="btn-close btn-close-white opacity-50" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
-                <div class="modal-body text-white lh-lg px-4 pb-4" id="sobre">
-               <p>
-                    Olá, bem-vindo(a) à minha página! Meu nome é Welliton, tenho 32 anos, sou casado e um verdadeiro entusiasta da cultura geek. Desde 2015, dou vida a personagens que admiro através dos meus cosplays.
-                </p>
-                <p>
-                    Já fui o Sasuke por muitos anos, Gray Fullbuster (Fairy Tail), Kakashi (ANBU) e o mais novo que entrou na lista Obanai (Demon Slayer).
-                </p>
-                <p class="mb-0">
-                    Sou um leitor apaixonado que, lentamente está migrando para o campo da escrita. Mas ainda não divulguei.
-                </p>
-                <p>
-                    Quando não estou lendo ou escrevendo, você provavelmente vai me encontrar assistindo minhas séries, ouvindo uma playlist (que transita tranquilamente entre o pop, o rock e o J-rock) ou maratonando meus animes favoritos. 
-                </p>
-                <p>
-                    Na minha lista de honra estão obras como Fullmetal Alchemist: Brotherhood, Dragon Ball Z, Naruto Shippuden, Demon Slayer e Death Note. 
-                </p>
-                <p>
-                    Amo quebra-cabeças, então eu sou grande fã dos Trading Card Game como Yu-Gi-Oh e Pokemon.
-                </p>
-                <p>
-                    Isto é um pouquinho de mim. Fique à vontade para explorar minhas redes sociais!
-                </p>
+                <div class="modal-body text-light opacity-75 lh-lg px-4 pb-4 mt-2">
+                    <p>
+                        E aí! Sou o Welliton Moreira. Pra mim, o cosplay não é só vestir uma roupa legal no dia do evento, é a construção completa do personagem. Gosto de levar a preparação física a sério — treinando pesado em casa na base dos halteres e elásticos — para alcançar o porte exato dos personagens que escolho, geralmente puxando para uma estética Seinen e traços mais maduros. Em abril eu estava nas sombras como Kakashi ANBU, e agora o foco é entregar a melhor versão do Obanai Iguro.
+                    </p>
+                    <p>
+                        Fora dos eventos, minha rotina é dividida entre tecnologia e narrativas. Sou desenvolvedor web Full-Stack. Gosto de abrir o editor de código, trabalhar com PHP, MySQL e Bootstrap, e criar do zero projetos reais (desde sistemas de gestão até o <em>FitTrack</em>, um app de academia que estou construindo). Aliás, essa página minimalista que você está acessando foi codada linha por linha por mim.
+                    </p>
+                    <p class="mb-0">
+                        Quando não estou programando ou levantando peso, estou escrevendo. Atualmente dedico grande parte do meu tempo escrevendo meu próprio livro de suspense e thriller — construindo mistérios ao redor de personagens complexos como o psicólogo Elijah Brooks, a Helena, e figuras imprevisíveis como o Thorne. 
+                        <br><br>
+                        <strong class="text-white">Em resumo: construo sistemas de dia, escrevo mistérios à noite, e trago personagens à vida nos eventos.</strong>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Script da Web Share API -->
     <script>
+        // Lógica do Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('fade-out-loader');
+                setTimeout(() => {
+                    preloader.remove();
+                }, 600);
+            }, 1500); 
+        });
+
+        // Web Share API
         document.getElementById('shareBtn').addEventListener('click', async () => {
             if (navigator.share) {
                 try {
@@ -125,24 +116,6 @@
             } else {
                 alert('Copie o link no seu navegador para compartilhar: ' + window.location.href);
             }
-        });
-    </script>
-
-    <!-- Script do Preloader -->
-    <script>
-        // Aguarda a janela carregar completamente
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            
-            // Força a tela de loading aparecer por 1.5 segundos para o usuário ver a animação
-            setTimeout(() => {
-                preloader.classList.add('fade-out-loader');
-                
-                // Remove o elemento do HTML após 600ms (tempo da transição do CSS) para liberar os cliques na tela
-                setTimeout(() => {
-                    preloader.remove();
-                }, 600);
-            }, 1500); 
         });
     </script>
 </body>
